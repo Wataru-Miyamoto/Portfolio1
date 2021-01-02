@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <p>{{ message }}</p>
+    <hello_vue></hello_vue>
   </div>
 </template>
 
