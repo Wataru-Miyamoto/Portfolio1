@@ -8,13 +8,13 @@ class CreateDrafts < ActiveRecord::Migration[6.1]
       t.string :target
       t.string :counter
       t.string :link
-      t.boolean :emergency
-      t.boolean :primary_sector
-      t.boolean :other_sector
-      t.boolean :emigration
-      t.boolean :senior
-      t.boolean :parenting
-      t.boolean :other
+      t.boolean :emergency, null: false, default: false
+      t.boolean :primary_sector, null: false, default: false
+      t.boolean :other_sector, null: false, default: false
+      t.boolean :emigration, null: false, default: false
+      t.boolean :senior, null: false, default: false
+      t.boolean :parenting, null: false, default: false
+      t.boolean :other, null: false, default: true
       t.string :select
       t.string :comment
       t.string :draft_approver_id

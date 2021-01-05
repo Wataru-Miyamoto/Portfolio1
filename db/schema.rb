@@ -20,13 +20,13 @@ ActiveRecord::Schema.define(version: 2021_01_05_090707) do
     t.string "target"
     t.string "counter"
     t.string "link"
-    t.boolean "emergency"
-    t.boolean "primary_sector"
-    t.boolean "other_sector"
-    t.boolean "emigration"
-    t.boolean "senior"
-    t.boolean "parenting"
-    t.boolean "other"
+    t.boolean "emergency", default: false, null: false
+    t.boolean "primary_sector", default: false, null: false
+    t.boolean "other_sector", default: false, null: false
+    t.boolean "emigration", default: false, null: false
+    t.boolean "senior", default: false, null: false
+    t.boolean "parenting", default: false, null: false
+    t.boolean "other", default: true, null: false
     t.string "select"
     t.string "comment"
     t.string "draft_approver_id"
