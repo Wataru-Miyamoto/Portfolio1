@@ -10,7 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_05_094951) do
+ActiveRecord::Schema.define(version: 2021_01_05_095728) do
+
+  create_table "cities", force: :cascade do |t|
+    t.string "city_name"
+    t.string "city_code"
+    t.integer "pref_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["pref_id"], name: "index_cities_on_pref_id"
+  end
 
   create_table "drafts", force: :cascade do |t|
     t.string "name"
@@ -96,6 +105,7 @@ ActiveRecord::Schema.define(version: 2021_01_05_094951) do
     t.index ["mail"], name: "index_users_on_mail", unique: true
   end
 
+  add_foreign_key "cities", "prefs"
   add_foreign_key "drafts", "users"
   add_foreign_key "pref_topics", "prefs"
 end
