@@ -2,12 +2,12 @@ class User < ApplicationRecord
   has_many :drafts, dependent: :destroy
   # 「remember_token」という仮想の属性を作成します。
   attr_accessor :remember_token
-  before_save { self.email = email.downcase }
+  before_save { self.mail = mail.downcase }
 
   validates :name, presence: true, length: { maximum: 50 }
-  VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
-  validates :email, presence: true, length: { maximum: 100 },
-                    format: { with: VALID_EMAIL_REGEX },
+  VALID_MAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
+  validates :mail, presence: true, length: { maximum: 100 },
+                    format: { with: VALID_MAIL_REGEX },
                     uniqueness: true
 has_secure_password
 validates :password, presence: true, length: { minimum: 6 }

@@ -7,8 +7,7 @@ class Api::V1::UsersController < ApiController
   end
 
   def index
-    users = User.all
-    render json: users
+    @users = User.order('created_at DESC')
   end
 
   def show
