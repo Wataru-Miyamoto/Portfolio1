@@ -4,7 +4,19 @@ ActiveAdmin.register User do
   #
   # Uncomment all parameters which should be permitted for assignment
   #
-  permit_params :name, :mail, :password, :password_confirmation, :admin, :editor, :password_digest
+  permit_params :name, :mail, :password, :password_confirmation, :admin, :editor
+
+  form do |f|
+    f.inputs do
+      f.input :name
+      f.input :mail
+      f.input :password
+      f.input :password_confirmation
+      f.input :admin
+      f.input :editor
+    end
+    f.actions
+  end
   #
   # or
   #
