@@ -11,3 +11,10 @@ User.create!(name: "管理者",
              password_confirmation: "0123456789abcdef",
              admin: true,
              editor: true)
+
+User.create!(name: "宮本　航",
+             mail: "ponmiyapon43@gmail.com",
+             password: "wataru43",
+             password_confirmation: "wataru43",
+             admin: false,
+             editor: true)
